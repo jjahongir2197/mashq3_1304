@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+<style>
+
+body {
+
+font-family: Arial;
+
+background-color: lightblue;
+
+}
+
+.box {
+
+background-color: white;
+
+padding: 15px;
+
+margin: 10px;
+
+border-radius: 8px;
+
+}
+
+.hot {
+color: red;
+}
+
+.warm {
+color: orange;
+}
+
+.cold {
+color: blue;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Weather Report</h1>
+
+{% for r in results %}
+
+<div class="box">
+
+<h2>{{ r.temp }} °C</h2>
+
+{% if r.status == "Hot" %}
+
+<p class="hot">Hot Weather</p>
+
+{% elif r.status == "Warm" %}
+
+<p class="warm">Warm Weather</p>
+
+{% else %}
+
+<p class="cold">Cold Weather</p>
+
+{% endif %}
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>
